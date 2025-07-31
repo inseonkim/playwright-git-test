@@ -42,8 +42,8 @@ pipeline {
         always {
             // HTML 리포트 파일들을 아티팩트로 저장
             archiveArtifacts artifacts: '**/playwright-report/**, **/monocart-report/**', 
-                           fingerprint: true, 
-                           allowEmptyArchive: true
+                           fingerprint: true, // 파일 변경 사항 확인
+                           allowEmptyArchive: true // 파일이 없을때 에러 방지
 
             // HTML Publisher로 리포트 게시
             publishHTML([
