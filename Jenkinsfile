@@ -68,7 +68,7 @@ pipeline {
             
             echo 'Cleaning up...'
             // HTML 리포트 게시 후에 cleanup
-            cleanWs()
+            cleanWs() // 컨테이너에서 만든 파일들은 삭제
         }
         failure {
             echo 'Build failed!'
